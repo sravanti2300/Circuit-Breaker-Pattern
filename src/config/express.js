@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const cors = require('cors');
 const helmet = require('helmet');
 const { middlewareLogger } = require('./logger');
-//const routes = require('../api/routes');
+const routes = require('../api/routes');
 const error = require('../api/middlewares/error.js');
 
 /**
@@ -36,7 +36,7 @@ app.use(helmet());
 app.use(cors());
 
 // mount api v1 routes
-//app.use(routes);
+app.use(routes);
 
 app.use(error.validationError);
 
